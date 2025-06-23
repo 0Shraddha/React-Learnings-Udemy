@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React Essentials - Practice Project Learnings
 
 This repository contains the code and reflects the key learnings from the "Section 5: React Essentials - Practice Project" of my Udemy course. This hands-on project was instrumental in solidifying fundamental React concepts and building a practical application from the ground up.
@@ -75,3 +76,6 @@ This practice project provided a deep dive into several core React principles. B
 * Instructor and course materials from the Udemy course "React - The Complete Guide (incl Hooks, React Router, Redux)" by Maximilian Schwarzmüller.
 
 ---
+=======
+"# React-Learnings-Udemy" 
+>>>>>>> d7f684c (first commit)
