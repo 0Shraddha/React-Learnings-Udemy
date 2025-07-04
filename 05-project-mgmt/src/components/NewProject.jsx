@@ -10,29 +10,38 @@ const NewProject = ({onAdd, onCancel}) => {
     const desc = useRef();
     const date = useRef();
 
-    function handleSave(){
+    function handleSave(event){
+      event.preventDefault();
+
         const enteredTitle = title.current.value;
         const enteredDesc = desc.current.value;
         const enteredDate = date.current.value;
 
-        if(enteredTitle.trim() === '' || enteredDesc.trim() === '' || enteredDate.trim() === ''){
-            modal.current.open();
-            return;
-        }
+        console.log("Entered values:", enteredTitle, enteredDesc, enteredDate);
 
-        //validation
+        if (
+          enteredTitle.trim() === '' ||
+          enteredDesc.trim() === '' ||
+          enteredDate.trim() === ''
+        ) {
+          console.log("Validation failed. Showing modal.");
+          modal.current.open();
+          return;
+        }
+      
+        console.log("Calling onAdd...");
         onAdd({
-            title: enteredTitle,
-            desc: enteredDesc,
-            date: enteredDate,
-    
-        })
-    }
+          title: enteredTitle,
+          desc: enteredDesc,
+          date: enteredDate,
+        });
+      }
+      
 
   return (
     <>
       <Modal ref={modal} btnCaption="Okay">
-        <h2 className='text-bold text-xl text-stone-700 my-4'>Invvalid Inupt</h2>
+        <h2 className='text-bold text-xl text-stone-700 my-4'>Invalid Inupt</h2>
         <p className='text-stone-400 mt-2'>Oops ... looks like you forgot to enter a value</p>
       </Modal>
       <div className='w-[35rem] mt-16'>
